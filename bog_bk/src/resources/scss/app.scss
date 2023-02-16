@@ -1,0 +1,53 @@
+.test {
+    font-size: 1rem;
+    background-color: red;
+    width: 100px;
+}
+h1 {
+    color: red;
+}
+.form-message {
+    font-size: 10px;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.checkbox-select-all-options {
+    width: 150px;
+    margin: 0 16px;
+}
+
+.list-item-modif {
+    display: inline-block;
+    padding-left: 15px;
+    margin-top: 5px;
+    list-style: none;
+}
+
+.card-modify {
+    height: 520px;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-modify {
+    display: flex;
+    align-items: center;
+    width: 130px;
+    height: 38px
+}
+
+//not found page 
+.not-found {
+    background-image: url('https://webmini.vn/wp-content/uploads/2021/05/403-error.png');
+}

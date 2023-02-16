@@ -1,0 +1,38 @@
+<div class="mt-4" name="container-form"  >
+    <div>
+      <h3>Khóa học đã đăng kí</h3>
+    </div>
+
+    
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">STT</th>
+          <th scope="col">
+            Tên Khóa học 
+          </th>
+          <th scope="col " colspan="2">
+            Thời gian đăng kí
+            </th>
+        </tr>
+      </thead>
+    <tbody>
+        {{#each courses}}
+          <tr>
+            <th scope="row">{{sum @index 1}}</th>
+            <td>{{this.name}}</td>
+            <td>{{this.createdAt}}</td>
+        </tr>
+        {{else}}
+        <tr>
+          <td colspan="4" class="text-center">
+            bạn chưa đăng kí khóa học nào
+            <a href="/">Chọn khóa học để đăng kí</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+    </table>
+    
+</div>
+

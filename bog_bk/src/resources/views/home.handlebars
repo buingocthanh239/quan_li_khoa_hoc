@@ -1,0 +1,35 @@
+<div class="mt-4">
+    
+    <div class="row">
+        {{#each courses}}
+        <div class="col-sm-6 col-lg-4" style="margin-top: 16px;">
+            <div class="card card-modify" >   
+                <a href="/courses/{{this.slug}}">
+                    <img src="{{this.image}}" class="card-img-top" alt="">
+                </a>
+                <div class="card-body">
+                    <a href="/courses/{{this.slug}}">
+                        <h5 class="card-title"> {{this.name}}</h5>
+                    </a>
+                    <p class="card-text">{{this.description}}</p>
+                    <button id={{this._id}}  class="btn btn-primary btn-modify" onclick="payCoureseFunction()"  >Mua Khóa học </button>
+                </div>
+            </div>
+        </div>
+        {{/each }}
+
+    </div>
+</div>
+<div id='id-user' data-id={{user.email}} ></div>
+<form  method="POST" id="store-course-user"></form>
+
+<script>
+    function payCoureseFunction() {
+       const btn = event.target;
+       const idCouser = btn.getAttribute("id");
+       const idUser = document.getElementById('id-user').getAttribute('data-id');
+       const form = document.getElementById('store-course-user');
+       form.action = `/courses/${idCouser}/${idUser}/store`;
+       form.submit();      
+    }
+</script>
