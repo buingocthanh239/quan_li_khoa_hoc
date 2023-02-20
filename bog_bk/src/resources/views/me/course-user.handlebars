@@ -20,8 +20,15 @@
         {{#each courses}}
           <tr>
             <th scope="row">{{sum @index 1}}</th>
-            <td>{{this.name}}</td>
+            <td>
+              <a href="/courses/{{this.slug}}" class="name-course-user-store">
+                {{this.name}}
+              </a>
+            </td>
             <td>{{this.createdAt}}</td>
+            <td>
+                <button class="remove-store-btn" data-id={{this._id}} onclick="handleDeleteForm()">Bỏ lưu</button>
+            </td>
         </tr>
         {{else}}
         <tr>
@@ -33,6 +40,18 @@
         {{/each}}
     </tbody>
     </table>
+<form method="post" id="remove-store-form"></form>
+<div id='id-user' data-id={{user.email}} ></div>
     
 </div>
+<script>
+  function handleDeleteForm() {
+    const deleteBtn = event.target;
+    const idCourse = deleteBtn.getAttribute("data-id");
+    const emailUser = document.getElementById('id-user').getAttribute('data-id');
+    const formDelete = document.getElementById('remove-store-form');
+    formDelete.action = `/courses/${idCourse}/${emailUser}`;
+    formDelete.submit();
 
+  }
+</script>

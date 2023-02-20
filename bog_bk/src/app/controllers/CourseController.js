@@ -128,7 +128,7 @@ class CourseController {
      } 
      //[get] /courses/store/:email
     async handleGetAllCouresUser(req, res, next) {
-        const coursUsers = await CourseUser.find({ idCourse: req.params.email})
+        const coursUsers = await CourseUser.find({ userId: req.params.email})
         Promise.all(coursUsers.map(async (coursUser) => {
             let course = await Course.findOne({
                 _id: coursUser.courseId,
@@ -141,31 +141,14 @@ class CourseController {
                 }); 
             })
             .catch(next)
-
-        // const promise = new Promise((resolve, reject) => {           
-        //     coursUsers.forEach( async (coursUser,index) => {
-        //         let course = await Course.findOne({
-        //             _id: coursUser.courseId,
-        //         })
-        //         courses1.push(course);
-        //         resolve(() => courses1);                                   
-        //     })           
-        // })
-
-        // promise
-        //     .then(() => {
-        //         res.render('me/course-user', {
-        //             courses: mutipleMongooseToObject(courses1), 
-        //         }); 
-        //     })
-                          
-            
-
-        
-
-             
-
      }
+
+     // [delete] / courses/:idCourse/:email
+    handleDeleteCourseUser(req, res, next) {
+        CourseUser.deleteMany({ courseId: req.params.idCourse, userId: req.params.email})
+            .then(() => res.redirect('back'))
+            .catch((err) => console.log(err))
+    }
 }
 
 module.exports = new CourseController();

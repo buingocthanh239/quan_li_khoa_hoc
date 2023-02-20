@@ -41,3 +41,19 @@ h1 {
 
 .not-found {
   background-image: url("https://webmini.vn/wp-content/uploads/2021/05/403-error.png"); }
+
+.remove-store-btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #6c6cef; }
+
+.remove-store-btn:hover {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: underline;
+  color: blue; }
+
+.name-course-user-store {
+  color: #212529; }

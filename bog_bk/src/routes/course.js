@@ -9,6 +9,7 @@ const lessoncontroller = require('../app/controllers/LessonController');
 
 // route store course-users
 router.get('/store/:email',coursecontroller.handleGetAllCouresUser)
+router.post('/:idCourse/:email',coursecontroller.handleDeleteCourseUser)
 router.post('/:idCourse/:idUser/store',coursecontroller.handleStoreCourseUsers)
 
 //newcontroller.index
