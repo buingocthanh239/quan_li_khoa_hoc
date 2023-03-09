@@ -6,13 +6,14 @@
 html {
   color: #333;
   font-size: 62.5%;
-  font-family: "Open Sans", sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 .main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/backgroundLogin.png);
   min-height: 100vh;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  object-fit: cover; }
 
 .form {
   width: 360px;
